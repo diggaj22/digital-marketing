@@ -1,26 +1,45 @@
-// 1. Scroll Reveal Animation for a premium feel 🌟
-const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.2 // Triggers when 20% of the element is visible
-};
+// Array to hold cart items
+let cart = [];
+let totalAmount = 0;
 
-const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            // Optional: stop observing once it's visible so it doesn't repeat
-            // observer.unobserve(entry.target); 
-        }
+function addToCart(itemName, price) {
+    // Add item to array
+    cart.push({ name: itemName, price: price });
+    totalAmount += price;
+    
+    updateCartUI();
+    
+    // Quick alert to show the button works
+    alert(`🎉 ${itemName} added to your cart! 🍦`);
+}
+
+function updateCartUI() {
+    const cartList = document.getElementById('cart-items');
+    const totalDisplay = document.getElementById('total-price');
+    
+    // Clear current list
+    cartList.innerHTML = '';
+    
+    // Populate list from cart array
+    cart.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.innerHTML = `<span>${item.name}</span> <span>₹${item.price}</span>`;
+        cartList.appendChild(li);
     });
-}, observerOptions);
+    
+    // Update total text
+    totalDisplay.innerText = `Total: ₹${totalAmount}`;
+}
 
-// Grab all elements with the 'fade-in' class and observe them
-document.querySelectorAll('.fade-in').forEach(element => {
-    observer.observe(element);
-});
-
-// 2. Interactive Button Click 🎁
-document.getElementById('promoBtn').addEventListener('click', () => {
-    alert("🎉 Awesome! Show this alert to the cashier for a FREE cherry and sprinkles on top of your order! 🍒✨");
-});
+function placeOrder() {
+    if (cart.length === 0) {
+        alert("Your cart is empty! Add some ice cream first. 🥺");
+    } else {
+        alert(`✅ Order placed successfully! Your total is ₹${totalAmount}. See you soon! 🛵💨`);
+        // Reset cart after ordering
+        cart = [];
+        totalAmount = 0;
+        document.getElementById('cart-items').innerHTML = '<li id="empty-msg">Your cart is empty. Add some ice cream! 🥺</li>';
+        document.getElementById('total-price').innerText = 'Total: ₹0';
+    }
+}
