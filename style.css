@@ -16,6 +16,21 @@ body {
     background-color: #ff9a9e;
     padding: 80px 20px;
     text-align: center;
+    position: relative;
+}
+
+#auth-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background: #2d3436;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 .hero-box {
@@ -50,9 +65,7 @@ body {
     transition: 0.2s;
 }
 
-.action-btn:hover {
-    background: #74b9ff;
-}
+.action-btn:hover { background: #74b9ff; }
 
 /* SECTION 2: MENU */
 #menu {
@@ -84,7 +97,7 @@ body {
 }
 
 .image-container {
-    background: #ffeaa7; /* Fallback color if image loads slow */
+    background: #ffeaa7;
     border-radius: 8px;
     margin-bottom: 15px;
     height: 200px;
@@ -122,20 +135,13 @@ body {
     transition: 0.2s;
 }
 
-.add-btn:hover {
-    background: #55efc4;
-}
+.add-btn:hover { background: #55efc4; }
 
 /* SECTION 3: CHECKOUT */
 #checkout {
     background: #dfe6e9;
     padding: 60px 20px;
     text-align: center;
-}
-
-#checkout h2 {
-    margin-bottom: 20px;
-    font-size: 2.2rem;
 }
 
 .cart-box {
@@ -179,11 +185,66 @@ body {
     cursor: pointer;
 }
 
-.checkout-btn:hover {
-    background: #ff7675;
-}
+.checkout-btn:hover { background: #ff7675; }
 
 .contact-info p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: bold;
+    margin-top: 5px;
+}
+
+/* MODAL STYLES 🔐 */
+#auth-modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-box {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    width: 350px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.modal-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.modal-btn {
+    width: 100%;
+    padding: 12px;
+    background: #0984e3;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.toggle-link {
+    color: #0984e3;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.cancel-btn {
+    background: #ff7675;
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
 }
