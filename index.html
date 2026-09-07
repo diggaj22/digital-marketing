@@ -3,106 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Premium Artisan Gelato & Ice Cream">
-    <title>Luxe Scoops | Artisan Gelateria 🍦</title>
-    <!-- Premium Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Diggaj's Ice Cream Shop 🍨</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- SECTION 1: HERO ✨ -->
+    <!-- SECTION 1: HERO / WELCOME 🎪 -->
     <section id="hero">
-        <nav class="navbar">
-            <div class="logo">Luxe Scoops 🍨</div>
-            <div class="cart-icon" onclick="toggleCart()">Cart (<span id="cart-count">0</span>) 🛒</div>
-        </nav>
-        <div class="hero-content">
-            <h1>Artisan Gelato.</h1>
-            <p>Handcrafted daily using the world's finest ingredients. 🌍✨</p>
-            <a href="#menu" class="gold-btn">Explore The Menu 🥄</a>
+        <div class="hero-box">
+            <h1>🍦 Diggaj's Ice Cream Shop</h1>
+            <p>Fresh, delicious, and made locally in Pune! Order your favorites below. 🚀</p>
+            <a href="#menu" class="action-btn">View Menu 🛒</a>
         </div>
     </section>
 
     <!-- SECTION 2: MENU 🍨 -->
     <section id="menu">
-        <h2 class="section-title">Our Signature Collection 👑</h2>
-        <div class="grid">
+        <h2>Our Menu 😋</h2>
+        <div class="menu-grid">
             <!-- Item 1 -->
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1570197781417-0a5237575024?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Vanilla Bean">
-                <div class="card-info">
-                    <h3>Madagascar Vanilla</h3>
-                    <p class="price">₹180</p>
-                    <button class="add-btn" onclick="addToCart('Madagascar Vanilla', 180)">Add to Cart ➕</button>
+            <div class="product-card">
+                <div class="image-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Vanilla_ice_cream_scoops.jpg/400px-Vanilla_ice_cream_scoops.jpg" alt="Vanilla">
                 </div>
+                <h3>Classic Vanilla</h3>
+                <p class="price">₹150</p>
+                <button class="add-btn" onclick="addToCart('Classic Vanilla', 150)">Add to Order ➕</button>
             </div>
+            
             <!-- Item 2 -->
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1563805042-7684c8a9e9cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Dark Chocolate">
-                <div class="card-info">
-                    <h3>Belgian Dark Chocolate</h3>
-                    <p class="price">₹220</p>
-                    <button class="add-btn" onclick="addToCart('Belgian Chocolate', 220)">Add to Cart ➕</button>
+            <div class="product-card">
+                <div class="image-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Chocolate_ice_cream_in_a_bowl.jpg/400px-Chocolate_ice_cream_in_a_bowl.jpg" alt="Chocolate">
                 </div>
+                <h3>Double Chocolate</h3>
+                <p class="price">₹180</p>
+                <button class="add-btn" onclick="addToCart('Double Chocolate', 180)">Add to Order ➕</button>
             </div>
+            
             <!-- Item 3 -->
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1558227976-1b0a8801d01e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Strawberry">
-                <div class="card-info">
-                    <h3>Wild Strawberry</h3>
-                    <p class="price">₹190</p>
-                    <button class="add-btn" onclick="addToCart('Wild Strawberry', 190)">Add to Cart ➕</button>
+            <div class="product-card">
+                <div class="image-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Strawberry_ice_cream.jpg/400px-Strawberry_ice_cream.jpg" alt="Strawberry">
                 </div>
-            </div>
-            <!-- Item 4 -->
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1558500662-811c750e4d0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Mint Choco">
-                <div class="card-info">
-                    <h3>Mint Chocolate Crisp</h3>
-                    <p class="price">₹200</p>
-                    <button class="add-btn" onclick="addToCart('Mint Chocolate', 200)">Add to Cart ➕</button>
-                </div>
-            </div>
-            <!-- Item 5 -->
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Mango">
-                <div class="card-info">
-                    <h3>Alphonso Mango Sorbet</h3>
-                    <p class="price">₹210</p>
-                    <button class="add-btn" onclick="addToCart('Alphonso Mango', 210)">Add to Cart ➕</button>
-                </div>
-            </div>
-            <!-- Item 6 -->
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1580915411954-282cb1b0d780?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Cookie Dough">
-                <div class="card-info">
-                    <h3>Brown Butter Cookie</h3>
-                    <p class="price">₹230</p>
-                    <button class="add-btn" onclick="addToCart('Cookie Dough', 230)">Add to Cart ➕</button>
-                </div>
+                <h3>Strawberry Bliss</h3>
+                <p class="price">₹160</p>
+                <button class="add-btn" onclick="addToCart('Strawberry Bliss', 160)">Add to Order ➕</button>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 3: FOOTER & LOCATION 📍 -->
-    <section id="footer">
-        <h2>Visit The Parlor 🏛️</h2>
-        <p>📍 Flagship Store: FC Road, Pune, Maharashtra</p>
-        <p>⏰ Open Daily: 11:00 AM - 11:30 PM</p>
-        <p>A student project crafted with code and passion. 💻🔥</p>
-    </section>
-
-    <!-- FLOATING CART OVERLAY 🛍️ -->
-    <div id="cart-modal" class="hidden">
+    <!-- SECTION 3: CHECKOUT & CONTACT 💳 -->
+    <section id="checkout">
+        <h2>Your Cart 🛍️</h2>
         <div class="cart-box">
-            <h2>Your Order 🧾</h2>
-            <ul id="cart-items"></ul>
+            <ul id="cart-items">
+                <li id="empty-msg">Your cart is empty. 🥺</li>
+            </ul>
             <h3 id="total-price">Total: ₹0</h3>
-            <button class="gold-btn checkout-btn" onclick="checkout()">Checkout Securely 💳</button>
-            <button class="close-btn" onclick="toggleCart()">Close ❌</button>
+            <button class="checkout-btn" onclick="placeOrder()">Checkout Now ✅</button>
         </div>
-    </div>
+        
+        <div class="contact-info">
+            <p>📍 Location: Pune, Maharashtra | 📞 Call us: +91 98765 43210</p>
+        </div>
+    </section>
 
     <script src="script.js"></script>
 </body>
