@@ -3,85 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Order delicious artisan ice cream online at Sweet Scoops!">
-    <title>Sweet Scoops | Order Online 🍦</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Premium Artisan Gelato & Ice Cream">
+    <title>Luxe Scoops | Artisan Gelateria 🍦</title>
+    <!-- Premium Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- SECTION 1: HERO / WELCOME 🎪 -->
+    <!-- SECTION 1: HERO ✨ -->
     <section id="hero">
-        <div class="hero-overlay">
-            <h1>🍦 Sweet Scoops</h1>
-            <p>Freshly churned. Ready to order. Get your favorites now! 🚀</p>
-            <a href="#menu" class="action-btn">View Menu & Order 🛒</a>
+        <nav class="navbar">
+            <div class="logo">Luxe Scoops 🍨</div>
+            <div class="cart-icon" onclick="toggleCart()">Cart (<span id="cart-count">0</span>) 🛒</div>
+        </nav>
+        <div class="hero-content">
+            <h1>Artisan Gelato.</h1>
+            <p>Handcrafted daily using the world's finest ingredients. 🌍✨</p>
+            <a href="#menu" class="gold-btn">Explore The Menu 🥄</a>
         </div>
     </section>
 
-    <!-- SECTION 2: INTERACTIVE MENU 🍨 -->
+    <!-- SECTION 2: MENU 🍨 -->
     <section id="menu">
-        <h2>Select Your Flavors 😋</h2>
-        <div class="product-grid">
+        <h2 class="section-title">Our Signature Collection 👑</h2>
+        <div class="grid">
             <!-- Item 1 -->
-            <div class="product-card">
-                <img src="https://images.pexels.com/photos/1362534/pexels-photo-1362534.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Vanilla">
-                <h3>Classic Vanilla</h3>
-                <p class="price">₹150</p>
-                <button class="add-btn" onclick="addToCart('Classic Vanilla', 150)">Add to Order ➕</button>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1570197781417-0a5237575024?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Vanilla Bean">
+                <div class="card-info">
+                    <h3>Madagascar Vanilla</h3>
+                    <p class="price">₹180</p>
+                    <button class="add-btn" onclick="addToCart('Madagascar Vanilla', 180)">Add to Cart ➕</button>
+                </div>
             </div>
             <!-- Item 2 -->
-            <div class="product-card">
-                <img src="https://images.pexels.com/photos/2846337/pexels-photo-2846337.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Chocolate">
-                <h3>Double Chocolate</h3>
-                <p class="price">₹180</p>
-                <button class="add-btn" onclick="addToCart('Double Chocolate', 180)">Add to Order ➕</button>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1563805042-7684c8a9e9cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Dark Chocolate">
+                <div class="card-info">
+                    <h3>Belgian Dark Chocolate</h3>
+                    <p class="price">₹220</p>
+                    <button class="add-btn" onclick="addToCart('Belgian Chocolate', 220)">Add to Cart ➕</button>
+                </div>
             </div>
             <!-- Item 3 -->
-            <div class="product-card">
-                <img src="https://images.pexels.com/photos/1352243/pexels-photo-1352243.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Strawberry">
-                <h3>Strawberry Bliss</h3>
-                <p class="price">₹160</p>
-                <button class="add-btn" onclick="addToCart('Strawberry Bliss', 160)">Add to Order ➕</button>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1558227976-1b0a8801d01e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Strawberry">
+                <div class="card-info">
+                    <h3>Wild Strawberry</h3>
+                    <p class="price">₹190</p>
+                    <button class="add-btn" onclick="addToCart('Wild Strawberry', 190)">Add to Cart ➕</button>
+                </div>
             </div>
             <!-- Item 4 -->
-            <div class="product-card">
-                <img src="https://images.pexels.com/photos/3631430/pexels-photo-3631430.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Mint Choco">
-                <h3>Mint Choco Chip</h3>
-                <p class="price">₹170</p>
-                <button class="add-btn" onclick="addToCart('Mint Choco Chip', 170)">Add to Order ➕</button>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1558500662-811c750e4d0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Mint Choco">
+                <div class="card-info">
+                    <h3>Mint Chocolate Crisp</h3>
+                    <p class="price">₹200</p>
+                    <button class="add-btn" onclick="addToCart('Mint Chocolate', 200)">Add to Cart ➕</button>
+                </div>
             </div>
             <!-- Item 5 -->
-            <div class="product-card">
-                <img src="https://images.pexels.com/photos/1262302/pexels-photo-1262302.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Mango">
-                <h3>Alphonso Mango</h3>
-                <p class="price">₹190</p>
-                <button class="add-btn" onclick="addToCart('Alphonso Mango', 190)">Add to Order ➕</button>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Mango">
+                <div class="card-info">
+                    <h3>Alphonso Mango Sorbet</h3>
+                    <p class="price">₹210</p>
+                    <button class="add-btn" onclick="addToCart('Alphonso Mango', 210)">Add to Cart ➕</button>
+                </div>
             </div>
             <!-- Item 6 -->
-            <div class="product-card">
-                <img src="https://images.pexels.com/photos/2161643/pexels-photo-2161643.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Cookie Dough">
-                <h3>Cookie Dough</h3>
-                <p class="price">₹200</p>
-                <button class="add-btn" onclick="addToCart('Cookie Dough', 200)">Add to Order ➕</button>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1580915411954-282cb1b0d780?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Cookie Dough">
+                <div class="card-info">
+                    <h3>Brown Butter Cookie</h3>
+                    <p class="price">₹230</p>
+                    <button class="add-btn" onclick="addToCart('Cookie Dough', 230)">Add to Cart ➕</button>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 3: CART & CHECKOUT 💳 -->
-    <section id="checkout">
-        <h2>Your Cart 🛍️</h2>
-        <div class="cart-container">
-            <ul id="cart-items">
-                <li id="empty-msg">Your cart is empty. Add some ice cream! 🥺</li>
-            </ul>
-            <h3 id="total-price">Total: ₹0</h3>
-            <button id="checkout-btn" class="action-btn" onclick="placeOrder()">Checkout Now ✅</button>
-        </div>
-        <div class="store-info">
-            <p>📍 Pick up: FC Road, Pune | 📞 Contact: +91 98765 43210</p>
-        </div>
+    <!-- SECTION 3: FOOTER & LOCATION 📍 -->
+    <section id="footer">
+        <h2>Visit The Parlor 🏛️</h2>
+        <p>📍 Flagship Store: FC Road, Pune, Maharashtra</p>
+        <p>⏰ Open Daily: 11:00 AM - 11:30 PM</p>
+        <p>A student project crafted with code and passion. 💻🔥</p>
     </section>
+
+    <!-- FLOATING CART OVERLAY 🛍️ -->
+    <div id="cart-modal" class="hidden">
+        <div class="cart-box">
+            <h2>Your Order 🧾</h2>
+            <ul id="cart-items"></ul>
+            <h3 id="total-price">Total: ₹0</h3>
+            <button class="gold-btn checkout-btn" onclick="checkout()">Checkout Securely 💳</button>
+            <button class="close-btn" onclick="toggleCart()">Close ❌</button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
