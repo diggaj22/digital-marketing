@@ -1,45 +1,46 @@
-// Array to hold cart items
 let cart = [];
-let totalAmount = 0;
+let total = 0;
 
-function addToCart(itemName, price) {
-    // Add item to array
-    cart.push({ name: itemName, price: price });
-    totalAmount += price;
-    
+function addToCart(name, price) {
+    cart.push({ name, price });
+    total += price;
+    document.getElementById('cart-count').innerText = cart.length;
     updateCartUI();
     
-    // Quick alert to show the button works
-    alert(`🎉 ${itemName} added to your cart! 🍦`);
+    // Tiny subtle alert so it doesn't interrupt the premium vibe
+    console.log(`✅ ${name} added to cart!`); 
 }
 
 function updateCartUI() {
-    const cartList = document.getElementById('cart-items');
-    const totalDisplay = document.getElementById('total-price');
+    const list = document.getElementById('cart-items');
+    list.innerHTML = '';
     
-    // Clear current list
-    cartList.innerHTML = '';
-    
-    // Populate list from cart array
-    cart.forEach((item, index) => {
-        const li = document.createElement('li');
-        li.innerHTML = `<span>${item.name}</span> <span>₹${item.price}</span>`;
-        cartList.appendChild(li);
-    });
-    
-    // Update total text
-    totalDisplay.innerText = `Total: ₹${totalAmount}`;
+    if (cart.length === 0) {
+        list.innerHTML = '<li><span style="color:#888;">Cart is empty 🥺</span></li>';
+    } else {
+        cart.forEach(item => {
+            const li = document.createElement('li');
+            li.innerHTML = `<span>${item.name} 🍨</span> <span style="color:#d4af37;">₹${item.price}</span>`;
+            list.appendChild(li);
+        });
+    }
+    document.getElementById('total-price').innerText = `Total: ₹${total}`;
 }
 
-function placeOrder() {
+function toggleCart() {
+    const modal = document.getElementById('cart-modal');
+    modal.classList.toggle('hidden');
+    updateCartUI();
+}
+
+function checkout() {
     if (cart.length === 0) {
-        alert("Your cart is empty! Add some ice cream first. 🥺");
-    } else {
-        alert(`✅ Order placed successfully! Your total is ₹${totalAmount}. See you soon! 🛵💨`);
-        // Reset cart after ordering
-        cart = [];
-        totalAmount = 0;
-        document.getElementById('cart-items').innerHTML = '<li id="empty-msg">Your cart is empty. Add some ice cream! 🥺</li>';
-        document.getElementById('total-price').innerText = 'Total: ₹0';
+        alert("Your cart is empty! Select a flavor first. 🥄");
+        return;
     }
+    alert(`🎉 Order Confirmed! Total paid: ₹${total}. See you at the parlor! 🛵`);
+    cart = [];
+    total = 0;
+    document.getElementById('cart-count').innerText = "0";
+    toggleCart(); // Close modal
 }
