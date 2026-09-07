@@ -8,11 +8,24 @@
 </head>
 <body>
 
+    <!-- LOGIN MODAL (Fake Backend) 🔐 -->
+    <div id="auth-modal">
+        <div class="modal-box">
+            <h2 id="auth-title">Login 👤</h2>
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button class="modal-btn" onclick="handleAuth()">Submit ✅</button>
+            <p class="toggle-link" onclick="toggleAuthMode()">Need an account? Register</p>
+            <button class="cancel-btn" onclick="document.getElementById('auth-modal').style.display='none'">Cancel ❌</button>
+        </div>
+    </div>
+
     <!-- SECTION 1: HERO / WELCOME 🎪 -->
     <section id="hero">
+        <button id="auth-btn" onclick="openAuth()">Login 👤</button>
         <div class="hero-box">
             <h1>🍦 Diggaj's Ice Cream Shop</h1>
-            <p>Fresh, delicious, and made locally in Pune! Order your favorites below. 🚀</p>
+            <p>Fresh, delicious, and made locally! Order your favorites below. 🚀</p>
             <a href="#menu" class="action-btn">View Menu 🛒</a>
         </div>
     </section>
@@ -24,7 +37,7 @@
             <!-- Item 1 -->
             <div class="product-card">
                 <div class="image-container">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Vanilla_ice_cream_scoops.jpg/400px-Vanilla_ice_cream_scoops.jpg" alt="Vanilla">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Vanilla_ice_cream_cone.jpg/600px-Vanilla_ice_cream_cone.jpg" alt="Vanilla" referrerpolicy="no-referrer" crossorigin="anonymous">
                 </div>
                 <h3>Classic Vanilla</h3>
                 <p class="price">₹150</p>
@@ -34,7 +47,7 @@
             <!-- Item 2 -->
             <div class="product-card">
                 <div class="image-container">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Chocolate_ice_cream_in_a_bowl.jpg/400px-Chocolate_ice_cream_in_a_bowl.jpg" alt="Chocolate">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Chocolate_ice_cream_in_a_bowl.jpg/600px-Chocolate_ice_cream_in_a_bowl.jpg" alt="Chocolate" referrerpolicy="no-referrer" crossorigin="anonymous">
                 </div>
                 <h3>Double Chocolate</h3>
                 <p class="price">₹180</p>
@@ -44,7 +57,7 @@
             <!-- Item 3 -->
             <div class="product-card">
                 <div class="image-container">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Strawberry_ice_cream.jpg/400px-Strawberry_ice_cream.jpg" alt="Strawberry">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Strawberry_ice_cream.jpg/600px-Strawberry_ice_cream.jpg" alt="Strawberry" referrerpolicy="no-referrer" crossorigin="anonymous">
                 </div>
                 <h3>Strawberry Bliss</h3>
                 <p class="price">₹160</p>
@@ -66,6 +79,7 @@
         
         <div class="contact-info">
             <p>📍 Location: Pune, Maharashtra | 📞 Call us: +91 98765 43210</p>
+            <p>👨‍💻 Developed by Diggaj, Sanju & Parthiv | Zeal College Mini-Project</p>
         </div>
     </section>
 
