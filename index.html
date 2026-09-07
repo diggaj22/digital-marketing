@@ -3,60 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sweet Scoops - Premium handcrafted ice cream in your neighborhood. Discover our artisan flavors today!">
-    <meta name="keywords" content="artisan ice cream, premium desserts, sweet scoops, local ice cream shop">
-    <title>Sweet Scoops | Artisan Ice Cream</title>
-    <!-- Modern Font: Poppins -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <meta name="description" content="Order delicious artisan ice cream online at Sweet Scoops!">
+    <title>Sweet Scoops | Order Online 🍦</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- SECTION 1: Hero -->
-    <section id="home" class="hero section">
-        <div class="glass-box fade-in">
+    <!-- SECTION 1: HERO / WELCOME 🎪 -->
+    <section id="hero">
+        <div class="hero-overlay">
             <h1>🍦 Sweet Scoops</h1>
-            <p>Artisan ice cream, handcrafted daily with pure joy.</p>
-            <a href="#menu" class="cta-btn">Explore Flavors 🍨</a>
+            <p>Freshly churned. Ready to order. Get your favorites now! 🚀</p>
+            <a href="#menu" class="action-btn">View Menu & Order 🛒</a>
         </div>
     </section>
 
-    <!-- SECTION 2: Menu -->
-    <section id="menu" class="menu section">
-        <h2 class="fade-in">Signature Scoops ✨</h2>
-        <div class="menu-grid">
-            <div class="card fade-in">
-                <img src="https://images.unsplash.com/photo-1557142046-c704a3adf364?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Vanilla Bean">
-                <div class="card-content">
-                    <h3>Madagascar Vanilla</h3>
-                    <p>Classic, creamy, and made with real vanilla beans.</p>
-                </div>
+    <!-- SECTION 2: INTERACTIVE MENU 🍨 -->
+    <section id="menu">
+        <h2>Select Your Flavors 😋</h2>
+        <div class="product-grid">
+            <!-- Item 1 -->
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/1362534/pexels-photo-1362534.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Vanilla">
+                <h3>Classic Vanilla</h3>
+                <p class="price">₹150</p>
+                <button class="add-btn" onclick="addToCart('Classic Vanilla', 150)">Add to Order ➕</button>
             </div>
-            <div class="card fade-in">
-                <img src="https://images.unsplash.com/photo-1563805042-7684c8a9e9cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Chocolate">
-                <div class="card-content">
-                    <h3>Midnight Fudge</h3>
-                    <p>Rich, dark chocolate swirled with gooey fudge.</p>
-                </div>
+            <!-- Item 2 -->
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/2846337/pexels-photo-2846337.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Chocolate">
+                <h3>Double Chocolate</h3>
+                <p class="price">₹180</p>
+                <button class="add-btn" onclick="addToCart('Double Chocolate', 180)">Add to Order ➕</button>
             </div>
-            <div class="card fade-in">
-                <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Strawberry">
-                <div class="card-content">
-                    <h3>Strawberry Bliss</h3>
-                    <p>Fresh organic strawberries folded into sweet cream.</p>
-                </div>
+            <!-- Item 3 -->
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/1352243/pexels-photo-1352243.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Strawberry">
+                <h3>Strawberry Bliss</h3>
+                <p class="price">₹160</p>
+                <button class="add-btn" onclick="addToCart('Strawberry Bliss', 160)">Add to Order ➕</button>
+            </div>
+            <!-- Item 4 -->
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/3631430/pexels-photo-3631430.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Mint Choco">
+                <h3>Mint Choco Chip</h3>
+                <p class="price">₹170</p>
+                <button class="add-btn" onclick="addToCart('Mint Choco Chip', 170)">Add to Order ➕</button>
+            </div>
+            <!-- Item 5 -->
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/1262302/pexels-photo-1262302.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Mango">
+                <h3>Alphonso Mango</h3>
+                <p class="price">₹190</p>
+                <button class="add-btn" onclick="addToCart('Alphonso Mango', 190)">Add to Order ➕</button>
+            </div>
+            <!-- Item 6 -->
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/2161643/pexels-photo-2161643.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Cookie Dough">
+                <h3>Cookie Dough</h3>
+                <p class="price">₹200</p>
+                <button class="add-btn" onclick="addToCart('Cookie Dough', 200)">Add to Order ➕</button>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 3: Contact -->
-    <section id="contact" class="contact section">
-        <div class="contact-box fade-in">
-            <h2>Come Say Hi! 👋</h2>
-            <p>📍 <strong>Location:</strong> 123 Dessert Lane, Sweet City</p>
-            <p>⏰ <strong>Hours:</strong> Open Daily | 10:00 AM - 9:00 PM</p>
-            <p>✉️ <strong>Email:</strong> hello@sweetscoops.com</p>
-            <button id="promoBtn" class="cta-btn outline">Claim Free Topping 🍒</button>
+    <!-- SECTION 3: CART & CHECKOUT 💳 -->
+    <section id="checkout">
+        <h2>Your Cart 🛍️</h2>
+        <div class="cart-container">
+            <ul id="cart-items">
+                <li id="empty-msg">Your cart is empty. Add some ice cream! 🥺</li>
+            </ul>
+            <h3 id="total-price">Total: ₹0</h3>
+            <button id="checkout-btn" class="action-btn" onclick="placeOrder()">Checkout Now ✅</button>
+        </div>
+        <div class="store-info">
+            <p>📍 Pick up: FC Road, Pune | 📞 Contact: +91 98765 43210</p>
         </div>
     </section>
 
