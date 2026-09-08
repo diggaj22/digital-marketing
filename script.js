@@ -1,39 +1,27 @@
-// --- SHOPPING CART LOGIC 🛒 ---
-let cart = [];
-let totalAmount = 0;
-
-function addToCart(itemName, price) {
-    cart.push({ name: itemName, price: price });
-    totalAmount += price;
-    updateCart();
-    alert(`✅ ${itemName} added to your cart! 🍦`);
-}
-
-function updateCart() {
-    const cartList = document.getElementById('cart-items');
-    const totalDisplay = document.getElementById('total-price');
-    
-    cartList.innerHTML = ''; 
-    
-    if (cart.length === 0) {
-        cartList.innerHTML = '<li id="empty-msg">Your cart is empty. 🥺</li>';
-    } else {
-        cart.forEach((item) => {
-            const li = document.createElement('li');
-            li.innerHTML = `<span>${item.name}</span> <span>₹${item.price}</span>`;
-            cartList.appendChild(li);
-        });
+// --- 🌙 DARK MODE LOGIC ---
+function initTheme() {
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-mode');
+        const btn = document.getElementById('theme-toggle');
+        if (btn) btn.innerText = "☀️ Light Mode";
     }
-    
-    totalDisplay.innerText = `Total: ₹${totalAmount}`;
 }
 
-// --- USER ACCOUNT SYSTEM (LOCALSTORAGE BACKEND) 👤 ---
-let isLoginMode = true;
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    const btn = document.getElementById('theme-toggle');
+    
+    if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+        if (btn) btn.innerText = "☀️ Light Mode";
+    } else {
+        localStorage.setItem('theme', 'light');
+        if (btn) btn.innerText = "🌙 Dark Mode";
+    }
+}
 
-window.onload = function() {
-    const currentUser = localStorage.getItem('currentUser');
-    if (currentUser) {
+// Run this immediately when any page loads!
+initTheme();
         document.getElementById('auth-btn').innerText = `Logout (${currentUser}) 🚪`;
     }
 };
