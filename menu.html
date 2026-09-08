@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Diggaj's Scoops 😋</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Extra styling just for the menu grid -->
+    <style>
+        .menu-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; max-width: 1000px; margin: 0 auto; }
+        .product-card { background: var(--card-bg); width: 300px; padding: 20px; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center; }
+        .image-container { height: 200px; border-radius: 8px; overflow: hidden; margin-bottom: 15px; }
+        .product-card img { width: 100%; height: 100%; object-fit: cover; }
+        .price { font-size: 1.2rem; color: #d63031; font-weight: bold; margin-bottom: 15px; }
+        .add-btn { width: 100%; background: #00b894; color: white; border: none; padding: 12px; font-weight: bold; border-radius: 6px; cursor: pointer; }
+        .filters { margin-bottom: 30px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+        .filter-btn { padding: 10px 20px; border: 2px solid #0984e3; background: transparent; color: var(--text-main); border-radius: 20px; cursor: pointer; font-weight: bold; }
+        .filter-btn.active { background: #0984e3; color: white; }
+    </style>
+</head>
+<body>
+
+    <!-- GLOBAL NAVIGATION 🧭 -->
+    <nav class="navbar">
+        <div class="logo">🍦 Diggaj's Scoops</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="menu.html" class="active">Menu 😋</a>
+            <a href="dashboard.html">Dashboard 🛒</a>
+            <button id="theme-toggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+            <button id="auth-btn" onclick="openAuth()">Login 👤</button>
+        </div>
+    </nav>
+
+    <!-- LOGIN MODAL 🔐 -->
+    <div id="auth-modal" style="display: none;">
+        <div class="modal-box">
+            <h2 id="auth-title">Login 👤</h2>
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button class="modal-btn" onclick="handleAuth()">Submit ✅</button>
+            <p class="toggle-link" onclick="toggleAuthMode()">Need an account? Register</p>
+            <button class="cancel-btn" onclick="closeModal()">Close ❌</button>
+        </div>
+    </div>
+
+    <!-- MENU SECTION 🍨 -->
+    <section class="page-container">
+        <h1 class="page-title">Pick Your Flavors 😋</h1>
+        
+        <div class="filters">
+            <button class="filter-btn active" onclick="filterMenu('all')">All Flavors 🍨</button>
+            <button class="filter-btn" onclick="filterMenu('classic')">Classics 🍦</button>
+            <button class="filter-btn" onclick="filterMenu('choco')">Chocolate 🍫</button>
+            <button class="filter-btn" onclick="filterMenu('fruity')">Fruity 🍓</button>
+        </div>
+
+        <div class="menu-grid">
+            <div class="product-card" data-category="classic">
+                <div class="image-container"><img src="https://images.pexels.com/photos/1362534/pexels-photo-1362534.jpeg" alt="Vanilla"></div>
+                <h3>Classic Vanilla</h3>
+                <p class="price">₹150</p>
+                <button class="add-btn" onclick="addToCart('Classic Vanilla', 150)">Add to Order ➕</button>
+            </div>
+            
+            <div class="product-card" data-category="choco">
+                <div class="image-container"><img src="https://images.pexels.com/photos/2846337/pexels-photo-2846337.jpeg" alt="Chocolate"></div>
+                <h3>Double Chocolate</h3>
+                <p class="price">₹180</p>
+                <button class="add-btn" onclick="addToCart('Double Chocolate', 180)">Add to Order ➕</button>
+            </div>
+            
+            <div class="product-card" data-category="fruity">
+                <div class="image-container"><img src="https://images.pexels.com/photos/1352243/pexels-photo-1352243.jpeg" alt="Strawberry"></div>
+                <h3>Strawberry Bliss</h3>
+                <p class="price">₹160</p>
+                <button class="add-btn" onclick="addToCart('Strawberry Bliss', 160)">Add to Order ➕</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER 👨‍💻 -->
+    <footer style="text-align: center; padding: 20px; border-top: 1px solid var(--border-color); margin-top: 50px;">
+        <p>👨‍💻 Zeal College Mini-Project developed by </p>
+    </footer>
+
+    <!-- SHARED SCRIPTS ⚙️ -->
+    <script src="theme.js"></script>
+    <script src="auth.js"></script>
+    <script src="cart.js"></script>
+</body>
+          </html>
+          
