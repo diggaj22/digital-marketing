@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Diggaj's Scoops 🛒</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .dashboard-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; max-width: 1000px; margin: 0 auto; }
+        .dash-card { background: var(--card-bg); width: 100%; max-width: 450px; padding: 30px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-align: left; }
+        .dash-card h2 { margin-bottom: 20px; color: #d63031; border-bottom: 2px solid var(--border-color); padding-bottom: 10px; }
+        #cart-items, #order-history { list-style: none; margin-bottom: 20px; }
+        #cart-items li, #order-history li { padding: 10px 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; font-size: 1.1rem; }
+        .checkout-btn { width: 100%; background: #00b894; color: white; padding: 12px; font-size: 1.2rem; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <!-- GLOBAL NAVIGATION 🧭 -->
+    <nav class="navbar">
+        <div class="logo">🍦 Diggaj's Scoops</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu 😋</a>
+            <a href="dashboard.html" class="active">Dashboard 🛒</a>
+            <button id="theme-toggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+            <button id="auth-btn" onclick="openAuth()">Login 👤</button>
+        </div>
+    </nav>
+
+    <!-- LOGIN MODAL 🔐 -->
+    <div id="auth-modal" style="display: none;">
+        <div class="modal-box">
+            <h2 id="auth-title">Login 👤</h2>
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button class="modal-btn" onclick="handleAuth()">Submit ✅</button>
+            <p class="toggle-link" onclick="toggleAuthMode()">Need an account? Register</p>
+            <button class="cancel-btn" onclick="closeModal()">Close ❌</button>
+        </div>
+    </div>
+
+    <!-- DASHBOARD VIEW 📊 -->
+    <section class="page-container">
+        <h1 class="page-title">Your Dashboard 👤</h1>
+        
+        <div class="dashboard-grid">
+            <!-- Active Cart -->
+            <div class="dash-card">
+                <h2>Current Cart 🛍️</h2>
+                <ul id="cart-items">
+                    <li style="color: gray;">Your cart is empty. 🥺</li>
+                </ul>
+                <h3 id="total-price" style="margin: 15px 0;">Total: ₹0</h3>
+                <button class="checkout-btn" onclick="placeOrder()">Checkout Now ✅</button>
+            </div>
+
+            <!-- Order History -->
+            <div class="dash-card">
+                <h2>Past Orders 📜</h2>
+                <ul id="order-history">
+                    <li style="color: gray;">Login to view your history! 🔒</li>
+                </ul>
+                <button class="cancel-btn" style="width: 100%; margin-top: 15px;" onclick="logout()">Logout 🚪</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER 👨‍💻 -->
+    <footer style="text-align: center; padding: 20px; border-top: 1px solid var(--border-color); margin-top: 50px;">
+        <p>👨‍💻 Zeal College Mini-Project developed by Diggaj, Sanju & Parthiv</p>
+    </footer>
+
+    <!-- SHARED SCRIPTS ⚙️ -->
+    <script src="theme.js"></script>
+    <script src="auth.js"></script>
+    <script src="cart.js"></script>
+</body>
+  </html>
+  
