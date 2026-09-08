@@ -8,32 +8,49 @@
 </head>
 <body>
 
-    <!-- LOGIN MODAL (Fake Backend) 🔐 -->
-    <div id="auth-modal">
+    <!-- GLOBAL NAVIGATION 🧭 -->
+    <nav class="navbar">
+        <div class="logo">🍦 Diggaj's Scoops</div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="menu.html">Menu 😋</a>
+            <a href="dashboard.html">Dashboard 🛒</a>
+            <button id="theme-toggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+            <button id="auth-btn" onclick="openAuth()">Login 👤</button>
+        </div>
+    </nav>
+
+    <!-- LOGIN MODAL 🔐 -->
+    <div id="auth-modal" style="display: none;">
         <div class="modal-box">
             <h2 id="auth-title">Login 👤</h2>
             <input type="text" id="username" placeholder="Username">
             <input type="password" id="password" placeholder="Password">
             <button class="modal-btn" onclick="handleAuth()">Submit ✅</button>
             <p class="toggle-link" onclick="toggleAuthMode()">Need an account? Register</p>
-            <button class="cancel-btn" onclick="document.getElementById('auth-modal').style.display='none'">Cancel ❌</button>
+            <button class="cancel-btn" onclick="closeModal()">Close ❌</button>
         </div>
     </div>
 
-    <!-- SECTION 1: HERO / WELCOME 🎪 -->
+    <!-- HERO SECTION 🎪 -->
     <section id="hero">
-        <button id="auth-btn" onclick="openAuth()">Login 👤</button>
         <div class="hero-box">
-            <h1>🍦 Diggaj's Ice Cream Shop</h1>
-            <p>Fresh, delicious, and made locally! Order your favorites below. 🚀</p>
-            <a href="#menu" class="action-btn">View Menu 🛒</a>
+            <h1>Welcome to the best scoops in Pune! 🍨</h1>
+            <p>Freshly made and ready to order. Grab your favorites today! 🚀</p>
+            <a href="menu.html" class="action-btn">Explore Menu 🛒</a>
         </div>
     </section>
 
-    <!-- SECTION 2: MENU 🍨 -->
-    <section id="menu">
-        <h2>Our Menu 😋</h2>
-        <div class="menu-grid">
+    <!-- FOOTER 👨‍💻 -->
+    <footer style="text-align: center; padding: 20px; margin-top: 50px;">
+        <p>👨‍💻 Zeal College Mini-Project developed by Diggaj, Sanju & Parthiv</p>
+    </footer>
+
+    <!-- SHARED SCRIPTS ⚙️ -->
+    <script src="theme.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>
             <!-- Item 1 -->
             <div class="product-card">
                 <div class="image-container">
